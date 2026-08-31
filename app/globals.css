@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  /* Gi Properties Brand Colors */
+  --gi-primary: #1a5f3f;
+  --gi-primary-hover: #155030;
+  --gi-secondary: #A39582;
+  /* Additional color tokens */
+  --border-color: #e5e7eb;
+  --card-background: #ffffff;
+  --card-foreground: #111111;
+  --muted-background: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent-background: #f3f4f6;
+  --accent-foreground: #111111;
+
+  /* shadcn semantic tokens (mapped to brand). Keep light + sensible. */
+  --primary: var(--gi-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--gi-secondary);
+  --secondary-foreground: #ffffff;
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --border: var(--border-color);
+  --input: var(--border-color);
+  --ring: var(--gi-primary);
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --radius: 0.5rem;
+
+  /* Chart palette — brand greens + supporting neutrals */
+  --chart-1: var(--gi-primary);        /* deep green */
+  --chart-2: #2f8a5a;                  /* mid green */
+  --chart-3: var(--gi-secondary);      /* warm sand */
+  --chart-4: #d97706;                  /* amber */
+  --chart-5: #b91c1c;                  /* red */
+  --chart-6: #1d4ed8;                  /* blue */
+
+  /* Sane defaults for theme token usage */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gi-primary: var(--gi-primary);
+  --color-gi-primary-hover: var(--gi-primary-hover);
+  --color-gi-secondary: var(--gi-secondary);
+  --color-border: var(--border-color);
+  --color-card-bg: var(--card-background);
+  --color-card-fg: var(--card-foreground);
+  --color-muted-bg: var(--muted-background);
+  --color-muted-fg: var(--muted-foreground);
+  --color-accent-bg: var(--accent-background);
+  --color-accent-fg: var(--accent-foreground);
+}
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #111111;
+  --color-gi-gray: #6b7280;
+  --color-gi-primary: #1a5f3f;
+  --color-gi-primary-hover: #155030;
+  --color-gi-secondary: #A39582;
+  --color-border-color: #e5e7eb;
+  --color-card-background: #ffffff;
+  --color-card-foreground: #111111;
+  --color-muted-background: #f9fafb;
+  --color-muted-foreground: #6b7280;
+  --color-accent-background: #f3f4f6;
+
+  /* shadcn semantic tokens exposed to Tailwind utilities */
+  --color-primary: var(--gi-primary);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--gi-secondary);
+  --color-secondary-foreground: #ffffff;
+  --color-destructive: #b91c1c;
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--gi-primary);
+  --color-input: var(--gi-primary);
+  --color-ring: var(--gi-primary);
+  --color-popover: #ffffff;
+  --color-popover-foreground: #111111;
+  --color-accent: #f3f4f6;
+  --color-accent-foreground: #111111;
+  --color-muted: #f9fafb;
+  --color-muted-foreground: #6b7280;
+
+  /* Chart palette */
+  --color-chart-1: #1a5f3f;
+  --color-chart-2: #2f8a5a;
+  --color-chart-3: #a39582;
+  --color-chart-4: #d97706;
+  --color-chart-5: #b91c1c;
+  --color-chart-6: #1d4ed8;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
