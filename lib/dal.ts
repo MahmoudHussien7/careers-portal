@@ -157,10 +157,16 @@ interface LookupResponse {
 
 export const getLookupItems = async (type: string): Promise<LookupItem[]> => {
   const { data } = await api.get<LookupResponse>(`/api/lookups/${type}`);
+  // Backend payload shapes vary; normalize through unknown first.
+  const raw = data as unknown as {
+    data?: { items?: LookupItem[] } | LookupItem[];
+    items?: LookupItem[];
+  };
+  const nested = raw?.data;
   const items =
-    data?.data?.items ??
-    (data as { items?: LookupItem[] })?.items ??
-    (data as { data?: LookupItem[] })?.data ??
+    (nested && !Array.isArray(nested) ? nested.items : undefined) ??
+    (Array.isArray(nested) ? nested : undefined) ??
+    raw?.items ??
     (Array.isArray(data) ? data : []);
   return Array.isArray(items) ? items : [];
 };
